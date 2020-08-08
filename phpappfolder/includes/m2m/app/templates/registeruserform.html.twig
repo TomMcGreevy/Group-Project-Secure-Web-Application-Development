@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+    <div id="page-content-div">
+        <form action="{{ action }}" method="post">
+            <h2>{{ page_heading_1 }}</h2>
+            <fieldset>
+                <legend>{{ page_heading_2 }}</legend>
+                <br>
+                <label for="username">Enter your name:</label>
+                <input id="username" name="username" type="text" value="{{ old_data.sanitised_username }}" size="30" maxlength="50" required="required">
+                <br><br>
+                <label for="password">Enter your password:</label>
+                <input id="password" name="password" type="password" size="30" maxlength="32" minlength="6" required="required">
+                <br><br>
+                <label for="phone">Enter your phone number:</label>
+                <input id="phone" name="phone_number" type="text" value="{{ old_data.sanitised_phone_number }}" size="30" maxlength="50">
+                <br><br>
+                <label for="email">Enter your email address:</label>
+                <input id="email" name="email" type="text" value="{{ old_data.sanitised_email }}" size="30" maxlength="50" required="required">
+                <br><br>
+
+                <input type="hidden" name="{{ nameKey }}" value="{{ name }}">
+                <input type="hidden" name="{{ valueKey }}" value="{{ value }}">
+
+                <input class="submit" type="submit" value="Create user account >>>">
+                <br><br>
+                <a href="{{ login_link }}">Already registered? Click here to login</a>
+            </fieldset>
+        </form>
+    </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        <div style="text-align: right;" class="row">
+            <div class="col-sm-12">
+                <img style="padding-bottom: 40px;" src="https://www.w3.org/Icons/valid-html401">
+            </div>
+        </div>
+    </div>
+{% endblock %}
